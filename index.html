@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFILAXIA DA RAIVA HUMANA</title>
+</head>
+<body>
+    <main>
+        <h1>PROFILAXIA DA RAIVA HUMANA</h1>
+        <section>
+            
+            <form id="caso" method="get">
+                <fieldset id="animal-agressor">
+                    <legend>Animal agressor</legend>
+                    <div>  
+                        <input id="cao-gato-sem-sinais" type="radio" name="animal-agressor" value="cao-gato-sem-sinais">
+                        <label for="cao-gato-sem-sinais"><b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA</label>
+                    </div>
+                    
+                    <div>
+                        <input id="cao-gato-com-sinais" type="radio" name="animal-agressor" value="cao-gato-com-sinais">
+                        <label for="cao-gato-com-sinais"><b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA</label>
+                    </div>
+
+                    <div>
+                        <input id="interesse-economico" type="radio" name="animal-agressor" value="interesse-economico">
+                        <label for="interesse-economico"><b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)</label>
+                    </div>
+
+                    <div>
+                        <input id="mamiferos-silvestres" type="radio" name="animal-agressor" value="mamiferos-silvestres">
+                        <label for="mamiferos-silvestres"><b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)</label>
+                    </div>
+
+                    <div>
+                        <input id="morcegos" type="radio" name="animal-agressor" value="morcegos">
+                        <label for="morcegos"><b>MORCEGOS</b></label>
+                    </div>
+                    
+                </fieldset>
+                <fieldset id="tipo-exposicao">
+                    <legend>TIPO DE EXPOSIÇÃO</legend>
+                    <div>
+                        <input id="contato-indireto" type="radio" name="exposicao" value="contato-indireto">
+                        <label for="contato-indireto"><b>CONTATO INDIRETO</b></label>
+                        <details>
+                            <summary>Clique para ver mais informações</summary>
+                            <ul>
+                                <li>Tocar ou dar de comer para animais.</li>
+                                <li>Lambedura em pele íntegra.</li>
+                                <li>Contato em pele íntegra com secreções ou excreções de animal, ainda que raivoso ou de caso humano</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div>
+                        <input id="leve" type="radio" name="exposicao" value="leve">
+                        <label for="leve"><b>LEVE</b></label>
+                        <details>
+                            <summary>Clique para ver mais informações</summary>
+                            <ul>
+                                <li>Mordedura ou arranhadura superficial no tronco ou nos membros, exceto mãos e pés.</li>
+                                <li>Lambedura de lesões superficiais.</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div>
+                        <input id="grave" type="radio" name="exposicao" value="grave">
+                        <label for="grave"><b>GRAVE</b></label>
+                        <details>
+                            <summary>Clique para ver mais informações</summary>
+                            <ul>
+                                <li>Mordedura ou arranhadura nas mucosas, no segmento cefálico, nas mãos ou nos pés.</li>
+                                <li>Mordedura ou arranhadura múltiplas ou extensas, em qualquer região do corpo.</li>
+                                <li>Mordedura ou arranhadura profunda, mesmo que puntiforme.</li>
+                                <li>Lambedura de lesões profundas ou de mucosas, mesmo que intactas</li>
+                                <li>Mordedura ou arranhadura causado por mamífero silvestre</li>
+                            </ul>
+                        </details>
+                    </div>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section id="resposta"></section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
