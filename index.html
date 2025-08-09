@@ -86,7 +86,39 @@
                 
             </form>
         </section>
-        <section class="resposta" id="resposta"></section>
+        <section class="answer-container">
+            <p>
+                <conditional-content params="exposicao=contato-indireto">
+                    Caso: contato <b>INDIRETO</b> com
+                </conditional-content>
+                <conditional-content params="exposicao=leve">
+                    Caso: contato <b>LEVE</b> com
+                </conditional-content>
+                <conditional-content params="exposicao=grave">
+                    Caso: contato <b>GRAVE</b> com
+                </conditional-content>
+
+                <conditional-content params="animal-agressor=cao-gato-sem-sinais">
+                    <b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA
+                </conditional-content>
+                <conditional-content params="animal-agressor=cao-gato-com-sinais">
+                    <b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA
+                </conditional-content>
+                <conditional-content params="animal-agressor=interesse-economico">
+                    <b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)
+                </conditional-content>
+                <conditional-content params="animal-agressor=mamiferos-silvestres">
+                    <b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)
+                </conditional-content>
+                <conditional-content params="animal-agressor=morcegos">
+                    <b>MORCEGOS</b>
+                </conditional-content>
+            </p>
+            
+            
+
+            <div id="resposta"></div>
+        </section>
 
         
     </main>
