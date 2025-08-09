@@ -7,84 +7,25 @@
     <title>Cálculo do soro</title>
 </head>
 <body>
+    
     <main>
-        <h1 class="title">PROFILAXIA DA RAIVA HUMANA</h1>
+        <h1 class="title">CÁLCULO DO SORO</h1>
         <section class="form-container">
             
             <form id="caso" method="get">
-                <fieldset id="animal-agressor">
-                    <legend>ANIMAL AGRESSOR</legend>
-                    <div class="choice">  
-                        <input id="cao-gato-sem-sinais" type="radio" name="animal-agressor" value="cao-gato-sem-sinais">
-                        <label for="cao-gato-sem-sinais"><b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA</label>
-                    </div>
-                    
-                    <div class="choice">
-                        <input id="cao-gato-com-sinais" type="radio" name="animal-agressor" value="cao-gato-com-sinais">
-                        <label for="cao-gato-com-sinais"><b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA</label>
-                    </div>
+                <label for="tipoSoro">Tipo de soro:</label>
+                    <select id="tipoSoro">
+                    <option value="heterologo">Heterólogo (animal)</option>
+                    <option value="homologo">Homólogo (humano)</option>
+                    </select>
 
-                    <div class="choice">
-                        <input id="interesse-economico" type="radio" name="animal-agressor" value="interesse-economico">
-                        <label for="interesse-economico"><b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)</label>
-                    </div>
+                    <label for="peso">Peso do paciente (kg):</label>
+                    <input type="number" id="peso" placeholder="Digite o peso em kg" required>
 
-                    <div class="choice">
-                        <input id="mamiferos-silvestres" type="radio" name="animal-agressor" value="mamiferos-silvestres">
-                        <label for="mamiferos-silvestres"><b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)</label>
-                    </div>
+                    <button onclick="calcularSoro()">Calcular</button>
 
-                    <div class="choice">
-                        <input id="morcegos" type="radio" name="animal-agressor" value="morcegos">
-                        <label for="morcegos"><b>MORCEGOS</b></label>
-                    </div>
-                    
+                    <div class="result" id="resultado"></div>
                 </fieldset>
-                <fieldset id="tipo-exposicao">
-                    <legend>TIPO DE EXPOSIÇÃO</legend>
-                    <div class="choice">
-                        <input id="contato-indireto" type="radio" name="exposicao" value="contato-indireto">
-                        <label for="contato-indireto"><b>CONTATO INDIRETO</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Tocar ou dar de comer para animais.</li>
-                                <li>Lambedura em pele íntegra.</li>
-                                <li>Contato em pele íntegra com secreções ou excreções de animal, ainda que raivoso ou de caso humano</li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="choice">
-                        <input id="leve" type="radio" name="exposicao" value="leve">
-                        <label for="leve"><b>LEVE</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Mordedura ou arranhadura superficial no tronco ou nos membros, exceto mãos e pés.</li>
-                                <li>Lambedura de lesões superficiais.</li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="choice">
-                        <input id="grave" type="radio" name="exposicao" value="grave">
-                        <label for="grave"><b>GRAVE</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Mordedura ou arranhadura nas mucosas, no segmento cefálico, nas mãos ou nos pés.</li>
-                                <li>Mordedura ou arranhadura múltiplas ou extensas, em qualquer região do corpo.</li>
-                                <li>Mordedura ou arranhadura profunda, mesmo que puntiforme.</li>
-                                <li>Lambedura de lesões profundas ou de mucosas, mesmo que intactas</li>
-                                <li>Mordedura ou arranhadura causado por mamífero silvestre</li>
-                            </ul>
-                        </details>
-                    </div>
-                </fieldset>
-                <div class="button-container">
-                    <button type="submit" class="submit-button">Enviar</button>
-                </div>
-                
-            </form>
         </section>
         <section id="resposta"></section>
     </main>

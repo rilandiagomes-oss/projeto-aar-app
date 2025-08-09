@@ -1,11 +1,13 @@
 :root{
     --background: #BBBBBB;
     --submit-button: #45a049;
-    --fieldset-color:#FFFFFF; 
+    --fieldset-color:#FFFFFF;
+    --background-menu: #FFFFFF;
 }
 
 body{
     background-color: var(--background);
+    margin: 0;
 }
 main{
     max-width: 1600px;
