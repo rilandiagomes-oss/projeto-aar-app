@@ -87,9 +87,6 @@
                         animal-agressor=mamiferos-silvestres, exposicao=leve|
                         exposicao=grave|
                     ">
-                        <popup-button popup-target="modal-soro" class="submit-button">
-                            Clique para calcular o soro
-                        </popup-button>
                         
                     </conditional-content>
                 </div>
@@ -280,35 +277,45 @@
                         Imunoglobulina humana antirrábica (IGHAR): IGHAR 20 UI/kg de peso.</p>
                     </div>
                 </conditional-content>
+
+                <conditional-content params="
+                    animal-agressor=morcegos | 
+                    animal-agressor=mamiferos-silvestres, exposicao=leve|
+                    exposicao=grave|
+                ">
+                    <div class="button-container">
+                        <button is="popup-button" popup-target="modal-soro" class="submit-button">
+                            Clique para calcular o soro
+                        </button>
+                    </div>  
+                </conditional-content>
+                
             </section>
         </conditional-content>
         
 
-        <popup-modal id="modal-soro">
+        <popup-modal id="modal-soro" max-width="600px">
             <section class="form-container" id="calculo-soro">
                 <h2>CÁLCULO DO SORO</h2>
-                <fieldset>
-                    <div class="tipo-soro-container">
-                        <div class="choice">  
-                            <input id="homologo" type="radio" name="tipo-soro" value="homologo" required>
-                            <label for="homologo"><b>HOMÓLOGO</b> (Humano)</label>
-                        </div>
-                        <div class="choice">  
-                            <input id="heterologo" type="radio" name="tipo-soro" value="homologo" required>
-                            <label for="heterologo"><b>HETERÓLOGO</b> (ANIMAL)</label>
-                        </div>
+                <div class="tipo-soro-container">
+                    <div class="choice">  
+                        <input id="homologo" type="radio" name="tipo-soro" value="homologo" required>
+                        <label for="homologo"><b>HOMÓLOGO</b> (Humano)</label>
                     </div>
+                    <div class="choice">  
+                        <input id="heterologo" type="radio" name="tipo-soro" value="heterologo" required>
+                        <label for="heterologo"><b>HETERÓLOGO</b> (ANIMAL)</label>
+                    </div>
+                </div>
+            
+                <div class="peso-container choice"> 
+                    <label for="peso"><b>PESO</b></label>
+                    <input id="peso" type="number" name="peso" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     
-                
-                    <div class="peso-container choice"> 
-                        <label for="peso"><b>PESO</b></label>
-                        <input id="peso" type="number" name="peso" required>
-                        
-                    </div>
-                     <div class="button-container">
-                        <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
-                    </div>
-                </fieldset>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
+                </div>
                
                 <div id="resultado-soro"></div>
             </section>

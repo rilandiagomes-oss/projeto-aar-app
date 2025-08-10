@@ -10,11 +10,11 @@ body{
     margin: 0;
 }
 main{
-    max-width: 1600px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
-h1, h2{
+h1, .popup-modal h2{
     margin-top: 30px;
     text-align: center;
 }
@@ -36,16 +36,19 @@ h1, h2{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
+
 .form-container fieldset, .answer-container{
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 30px;
     margin-top: 30px;
     background-color: var(--fieldset-color);
     padding: 6px 12px;
     border: 1px solid var(--border-color);
+
 }
 .form-container legend{
     background-color: var(--fieldset-color);
@@ -73,6 +76,7 @@ h1, h2{
 #calculo-soro .choice{
     flex-grow: 1;
     text-align: center;
+    margin-right: 20px;
 }
 #peso{
     width: 100%;

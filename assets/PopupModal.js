@@ -12,6 +12,9 @@ class PopupModal extends HTMLElement {
     disconnectedCallback() {
         this.cleanup();
     }
+    static get observedAttributes() {
+        return ['width', 'height'];
+    }
 
     render() {
         // Wrapper principal do popup
@@ -52,8 +55,8 @@ class PopupModal extends HTMLElement {
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            max-height: 80vh;
+            max-width: ${this.getAttribute('max-width') || '500px' };
+            max-height: ${this.getAttribute('max-height') || '80vh' };
             overflow-y: auto;
             min-width: 300px;
         `;

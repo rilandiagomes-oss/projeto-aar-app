@@ -21,12 +21,20 @@ params.forEach((value, name) => {
 });
 
 function calcularSoro() {
-  const peso = parseFloat(document.querySelector('#peso').value);
-  const tipoSoro = document.querySelector('#calculo-soro input[name="tipo-soro"]:checked').value;
+  const pesoElement = document.querySelector('#peso');
+  const tipoSoroElement = document.querySelector('#calculo-soro input[name="tipo-soro"]:checked');
   const resultadoSoro = document.querySelector('#resultado-soro');
 
+  if(!pesoElement || !tipoSoroElement){
+    resultadoSoro.textContent = "Por favor, preencha os campos.";
+    return;
+  }
+
+  const peso = parseFloat(pesoElement.value);
+  const tipoSoro = tipoSoroElement.value;
+
   if (!peso || peso <= 0) {
-      resultadoSoro.textContent = "Por favor, preencha o peso corretamente (deve ser maior que 0).";
+      resultadoSoro.textContent = "Por favor, informe o peso.";
       return;
   }
 
@@ -42,9 +50,9 @@ function calcularSoro() {
 
   const tipoTexto = tipoSoro === "heterologo" ? "Heterólogo" : "Homólogo";
   
-  resultadoSoro.textContent = 
-      `Tipo de Soro: ${tipoTexto}\n` +
-      `Peso do Paciente: ${peso} kg\n\n` +
-      `Dose necessária: ${doseUI.toFixed(0)} UI\n` +
-      `Volume a ser administrado: ${volumeML.toFixed(1)} mL`;
+  resultadoSoro.innerHTML = 
+      `<p><small>Tipo de Soro: <b>${tipoTexto}</b></small></p>` +
+      `<p><small>Peso do Paciente: <b>${peso} kg</b></small></p>` +
+      `<p>Dose necessária: <b>${doseUI.toFixed(0)} UI</b></p>` +
+      `<p>Volume a ser administrado: <b>${volumeML.toFixed(1)} mL</b></p>`;
 }
