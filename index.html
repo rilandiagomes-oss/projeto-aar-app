@@ -82,6 +82,16 @@
                 </fieldset>
                 <div class="button-container">
                     <button type="submit" class="submit-button">Enviar</button>
+                    <conditional-content params="
+                        animal-agressor=morcegos | 
+                        animal-agressor=mamiferos-silvestres, exposicao=leve|
+                        exposicao=grave|
+                    ">
+                        <popup-button popup-target="modal-soro" class="submit-button">
+                            Clique para calcular o soro
+                        </popup-button>
+                        
+                    </conditional-content>
                 </div>
                 
             </form>
@@ -272,6 +282,38 @@
                 </conditional-content>
             </section>
         </conditional-content>
+        
+
+        <popup-modal id="modal-soro">
+            <section class="form-container" id="calculo-soro">
+                <h2>CÁLCULO DO SORO</h2>
+                <fieldset>
+                    <div class="tipo-soro-container">
+                        <div class="choice">  
+                            <input id="homologo" type="radio" name="tipo-soro" value="homologo" required>
+                            <label for="homologo"><b>HOMÓLOGO</b> (Humano)</label>
+                        </div>
+                        <div class="choice">  
+                            <input id="heterologo" type="radio" name="tipo-soro" value="homologo" required>
+                            <label for="heterologo"><b>HETERÓLOGO</b> (ANIMAL)</label>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="peso-container choice"> 
+                        <label for="peso"><b>PESO</b></label>
+                        <input id="peso" type="number" name="peso" required>
+                        
+                    </div>
+                     <div class="button-container">
+                        <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
+                    </div>
+                </fieldset>
+               
+                <div id="resultado-soro"></div>
+            </section>
+        </popup-modal>
+
 
         
     </main>
@@ -283,6 +325,9 @@
     <random-mov-image src="assets/img/morcego.png" width="70" height="70" move-interval="3000"></random-mov-image>
     <random-mov-image src="assets/img/morcego.png" width="100" height="80" move-interval="3000"></random-mov-image>
     <script src="assets/script.js"></script>
-    <script src="assets/webComponents.js"></script>
+    <script src="assets/ConditionalContent.js"></script>
+    <script src="assets/PopupButton.js"></script>
+    <script src="assets/RandomMovImage.js"></script>
+    <script src="assets/PopupModal.js"></script>
 </body>
 </html>

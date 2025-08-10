@@ -14,7 +14,7 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
-.title{
+h1, h2{
     margin-top: 30px;
     text-align: center;
 }
@@ -63,4 +63,18 @@ main{
 }
 .choice{
     margin-top: 20px;
+}
+
+.tipo-soro-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#calculo-soro .choice{
+    flex-grow: 1;
+    text-align: center;
+}
+#peso{
+    width: 100%;
+    max-width: 200px;
 }
