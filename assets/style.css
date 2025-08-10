@@ -54,8 +54,12 @@ main{
     padding: 5px 10px;
     border-radius: 30px
 }
+.form-container fieldset{
+    padding-bottom: 20px;
+}
 .answer-container{
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 .choice{
     margin-top: 20px;
