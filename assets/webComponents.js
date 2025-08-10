@@ -128,28 +128,36 @@ class ConditionalContent extends HTMLElement {
     }
 
     const urlParams = new URLSearchParams(window.location.search);
-    const requiredParams = this.parseParams(paramsAttribute);
-    
-    
-    const allChecksPassed = requiredParams.every(({ key, value }) => {
-      if (value !== null) {
-        const urlValue = urlParams.get(key);
-        const matches = urlValue === value;
 
-        return matches;
-      } else {
-        const exists = urlParams.has(key);
+    const paramCases = paramsAttribute.split('|');
+    
+    let showContent = false;
 
-        return exists;
+    paramCases.forEach(paramCase =>{
+      const requiredParams = this.parseParams(paramCase);
+    
+      const checksPassed = requiredParams.every(({ key, value }) => {
+        if (value !== null) {
+          const urlValue = urlParams.get(key);
+          const matches = urlValue === value;
+
+          return matches;
+        } else {
+          const exists = urlParams.has(key);
+
+          return exists;
+        }
+      });
+
+
+      if (checksPassed) {
+        showContent = true;
+        return;
       }
-    });
+    })
 
-
-    if (allChecksPassed) {
-      this.showContent();
-    } else {
-      this.hideContent();
-    }
+    showContent ? this.showContent() : this.hideContent();
+    
   }
 
   parseParams(paramsString) {

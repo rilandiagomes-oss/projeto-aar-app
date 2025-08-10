@@ -54,6 +54,9 @@ main{
     padding: 5px 10px;
     border-radius: 30px
 }
+.answer-container{
+    padding-top: 20px;
+}
 .choice{
     margin-top: 20px;
 }
