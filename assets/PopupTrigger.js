@@ -1,4 +1,4 @@
-class PopupButton extends HTMLButtonElement {
+class PopupTrigger extends HTMLElement {
     constructor() {
         super();
     }
@@ -38,4 +38,4 @@ class PopupButton extends HTMLButtonElement {
     }
 }
 
-customElements.define('popup-button', PopupButton, { extends: 'button' });
+customElements.define('popup-trigger', PopupTrigger);

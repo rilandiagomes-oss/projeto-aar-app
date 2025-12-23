@@ -114,7 +114,6 @@ class PopupModal extends HTMLElement {
         const closeHandler = () => this.close();
 
         this.overlay.addEventListener('click', closeHandler);
-        this.overlay.addEventListener('pointerdown', closeHandler);
 
         this.closeButton.addEventListener('click', closeHandler);
 
@@ -126,9 +125,6 @@ class PopupModal extends HTMLElement {
         document.addEventListener('keydown', this.escListener);
 
         this.modal.addEventListener('click', (event) => {
-            event.stopPropagation();
-        });
-        this.modal.addEventListener('pointerdown', (event) => {
             event.stopPropagation();
         });
     }
