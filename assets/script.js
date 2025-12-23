@@ -23,13 +23,7 @@ selectedPparams.forEach((value, name) => {
 });
 
 
-formCaso.addEventListener('input', ()=>{
-  if(!formCaso.checkValidity()){
-    return;
-  }
 
-  formCaso.submit()
-})
 
 
 function calcularSoro() {
@@ -71,3 +65,32 @@ function calcularSoro() {
 
   observacaoSoro.classList.remove('hidden');  
 }
+
+formCaso.addEventListener('input', ()=>{
+  if(!formCaso.checkValidity()){
+    return;
+  }
+  const oldScrollInput = formCaso.querySelector('input[name="scroll"]');
+  if(oldScrollInput) oldScrollInput.remove();
+
+  const scrollInput = document.createElement('input');
+  scrollInput.type = 'hidden';
+  scrollInput.name = 'scroll';
+  scrollInput.value = window.scrollY;
+  formCaso.appendChild(scrollInput);
+
+  formCaso.submit()
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const scrollPos = params.get('scroll');
+  
+  if(scrollPos) {
+    window.scrollTo(0, parseInt(scrollPos));
+    
+    window.addEventListener('load', () => {
+      window.scrollTo(0, parseInt(scrollPos));
+    });
+  }
+});
