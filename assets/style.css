@@ -103,7 +103,6 @@ html, body {
     
     /* Layout */
     --page-width: 1100px;
-    --container-padding: 1rem;
     
     /* Transições */
     --transition-fast: 150ms ease;
@@ -324,7 +323,7 @@ fieldset .choice:first-of-type {
 
 /* Listas */
 ul, ol {
-    padding-left: var(--space-md);
+    padding-left: var(--space-lg);
 }
 
 ul {
@@ -413,9 +412,6 @@ a:hover {
         --space-2xl: 2rem;
     }
     
-    .page-width {
-        padding: 0 var(--container-padding);
-    }
     
     .button-container {
         flex-direction: column;
@@ -443,9 +439,5 @@ a:hover {
         margin: var(--space-sm);
         padding: var(--space-sm);
     }
-    
-    .form-container fieldset,
-    .answer-container .answer {
-        padding: var(--space-lg) var(--space-sm);
-    }
+
 }
