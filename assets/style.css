@@ -4,6 +4,9 @@
     --submit-button-color: #45a049;
     --fieldset-color: #FFFFFF;
     --border-color: #000;
+    --link-color: #025;
+
+    --page-width: 1100px;
 
     --space-xs: 5px;
     --space-sm: 10px;
@@ -20,8 +23,10 @@ body{
     margin: 0;
 }
 
-main{
-    max-width: 1000px;
+.page-width{
+    max-width: var(--page-width);
+}
+.center{
     margin-left: auto;
     margin-right: auto;
 }
@@ -58,8 +63,6 @@ h1,
 
 .form-container fieldset,
 .answer-container .answer{
-    margin-left: var(--space-sm);
-    margin-right: var(--space-sm);
     margin-top: var(--space-lg);
     background-color: var(--fieldset-color);
     padding: 2rem 1rem;
@@ -109,10 +112,45 @@ ul{
 details summary{
     cursor: pointer;
 }
+a, a:hover, a:visited{
+    color: var(--link-color);
+    font-weight: bold;
+}
 
 .hidden{
     display: none !important;
 }
 .obs-soro{
     font-size: 0.8rem;
+}
+.img-gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+
+}
+.link-imagens{
+    display: flex;
+    justify-content: right;
+    margin-top: var(--space-md);
+}
+
+.img-gallery .image{
+    width: 768px;
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.navbar{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--page-width);
+    margin-bottom: var(--space-lg);
+    padding-left: var(--space-sm);
+}
+.main-container{
+    margin: var(--space-sm) var(--space-md)
 }

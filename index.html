@@ -7,365 +7,367 @@
     <title>Profilaxia da raiva humana</title>
 </head>
 <body>
-    <main>
-        <h1 class="title">PROFILAXIA DA RAIVA HUMANA</h1>
-        <section class="form-container">
-            
-            <form id="caso" method="get">
-                <fieldset id="animal-agressor">
-                    <legend>ANIMAL AGRESSOR</legend>
-                    <div class="choice">  
-                        <input id="cao-gato-sem-sinais" type="radio" name="animal-agressor" value="cao-gato-sem-sinais" required>
-                        <label for="cao-gato-sem-sinais"><b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA</label>
-                    </div>
-                    
-                    <div class="choice">
-                        <input id="cao-gato-com-sinais" type="radio" name="animal-agressor" value="cao-gato-com-sinais" required>
-                        <label for="cao-gato-com-sinais"><b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA</label>
-                    </div>
-
-                    <div class="choice">
-                        <input id="interesse-economico" type="radio" name="animal-agressor" value="interesse-economico" required>
-                        <label for="interesse-economico"><b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)</label>
-                    </div>
-
-                    <div class="choice">
-                        <input id="mamiferos-silvestres" type="radio" name="animal-agressor" value="mamiferos-silvestres" required>
-                        <label for="mamiferos-silvestres"><b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)</label>
-                    </div>
-
-                    <div class="choice">
-                        <input id="morcegos" type="radio" name="animal-agressor" value="morcegos" required>
-                        <label for="morcegos"><b>MORCEGOS</b></label>
-                    </div>
-                    
-                </fieldset>
-                <fieldset id="tipo-exposicao">
-                    <legend>TIPO DE EXPOSIÇÃO</legend>
-                    <div class="choice">
-                        <input id="contato-indireto" type="radio" name="exposicao" value="contato-indireto" required>
-                        <label for="contato-indireto"><b>CONTATO INDIRETO</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Tocar ou dar de comer para animais.</li>
-                                <li>Lambedura em pele íntegra.</li>
-                                <li>Contato em pele íntegra com secreções ou excreções de animal, ainda que raivoso ou de caso humano</li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="choice">
-                        <input id="leve" type="radio" name="exposicao" value="leve" required>
-                        <label for="leve"><b>LEVE</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Mordedura ou arranhadura superficial no tronco ou nos membros, exceto mãos e pés.</li>
-                                <li>Lambedura de lesões superficiais.</li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="choice">
-                        <input id="grave" type="radio" name="exposicao" value="grave" required>
-                        <label for="grave"><b>GRAVE</b></label>
-                        <details>
-                            <summary>Clique para ver mais informações</summary>
-                            <ul>
-                                <li>Mordedura ou arranhadura nas mucosas, no segmento cefálico, nas mãos ou nos pés.</li>
-                                <li>Mordedura ou arranhadura múltiplas ou extensas, em qualquer região do corpo.</li>
-                                <li>Mordedura ou arranhadura profunda, mesmo que puntiforme.</li>
-                                <li>Lambedura de lesões profundas ou de mucosas, mesmo que intactas</li>
-                                <li>Mordedura ou arranhadura causado por mamífero silvestre</li>
-                            </ul>
-                        </details>
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-        <conditional-content params="exposicao, animal-agressor">
-            <section class="answer-container">
-                <fieldset class="answer">
-                    <legend>PROTOCOLO RECOMENDADO</legend>
-                    <div class="case">
-                        <conditional-content params="exposicao=contato-indireto">
-                            Caso: contato <b>INDIRETO</b> com
-                        </conditional-content>
-                        <conditional-content params="exposicao=leve">
-                            Caso: contato <b>LEVE</b> com
-                        </conditional-content>
-                        <conditional-content params="exposicao=grave">
-                            Caso: contato <b>GRAVE</b> com
-                        </conditional-content>
-
-                        <conditional-content params="animal-agressor=cao-gato-sem-sinais">
-                            <b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA
-                        </conditional-content>
-                        <conditional-content params="animal-agressor=cao-gato-com-sinais">
-                            <b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA
-                        </conditional-content>
-                        <conditional-content params="animal-agressor=interesse-economico">
-                            <b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)
-                        </conditional-content>
-                        <conditional-content params="animal-agressor=mamiferos-silvestres">
-                            <b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)
-                        </conditional-content>
-                        <conditional-content params="animal-agressor=morcegos">
-                            <b>MORCEGOS</b>
-                        </conditional-content>
-                        <hr/>
-                    </div>
-                    
-                    <div class="protocol">
-
-                        <conditional-content params="animal-agressor=cao-gato-sem-sinais">
-                            <conditional-content params="exposicao=contato-indireto">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INDICAR PROFILAXIA</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=leve">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INICIAR PROFILAXIA.</li>
-                                    <li>Manter o animal em observação por 10 dias Se permanecer vivo e saudável, suspender a observação no 10° dia e encerrar o caso. Se
-                                    morrer, desaparece ou apresentar sinais de raiva, indicar VACINA (dias 0, 3, 7 e 14)</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=grave">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INICIAR PROFILAXIA.</li>
-                                    <li>Manter o animal em observação por 10 dias Se permanecer vivo e saudável, suspender a observação no 10° dia e encerrar o caso. Se
-                                    morrer, desaparece ou apresentar sinais de raiva, indicar VACINA (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)•</li>
-                                </ul>
-                                
-                            </conditional-content>
-
-                        </conditional-content>
-
-                        <conditional-content params="animal-agressor=cao-gato-com-sinais">
-
-                            <conditional-content params="exposicao=contato-indireto">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INDICAR PROFILAXIA</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=leve">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14)</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=grave">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
-                                </ul>
-                                
-                            </conditional-content>
-
-                        </conditional-content>
-
-                        <conditional-content params="animal-agressor=interesse-economico">
-                            
-                            <conditional-content params="exposicao=contato-indireto">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INDICAR PROFILAXIA</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=leve">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14)</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=grave">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
-                                </ul>
-                            </conditional-content>
-
-                        </conditional-content>
-
-                        <conditional-content params="animal-agressor=mamiferos-silvestres">
-                            
-                            <conditional-content params="exposicao=contato-indireto">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>NÃO INDICAR PROFILAXIA</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=leve">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
-                                </ul>
-                            </conditional-content>
-
-                            <conditional-content params="exposicao=grave">
-                                <ul>
-                                    <li>Lavar com água e sabão.</li>
-                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
-                                </ul>
-                            </conditional-content>
-
-                        </conditional-content>
-
-                        <conditional-content params="animal-agressor=morcegos">
-                            <ul>
-                                <li>Lavar com água e sabão.</li>
-                                <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
-                            </ul>
-
-                        </conditional-content>
-
-                    </div>
-                    <conditional-content params="
-                    animal-agressor=morcegos | 
-                    exposicao=leve, animal-agressor=cao-gato-com-sinais |
-                    exposicao=leve, animal-agressor=interesse-economico |
-                    exposicao=leve, animal-agressor=mamiferos-silvestres |
-                    exposicao=grave, animal-agressor=cao-gato-com-sinais |
-                    exposicao=grave, animal-agressor=interesse-economico |
-                    exposicao=grave, animal-agressor=mamiferos-silvestres |
-                    ">
-                        <div class="vaccine">
-                            <p><b>*VACINA</b> Quatro doses, nos dias 0, 3, 7 e 14</p>
-                            <p>
-                                A vacina deverá ser administrada por via intradérmica ou via intramuscular.
-                                Via intradérmica: volume da dose 0,2 ml. O volume da dose deve ser dividido em duas aplicações de 0,1 ml cada e
-                                administradas em dois sítios distintos, independente da apresentação da vacina, seja 0,5 ml ou 1,0 ml (dependendo do
-                                laboratório produtor). Local de aplicação: inserção do músculo deltoide ou no antebraço.
-                                Via intramuscular: dose total 0,5 ml ou 1,0 ml (dependendo do laboratório produtor). Administrar todo o volume do
-                                frasco. Local de aplicação: no músculo deltoide ou vasto lateral da coxa em crianças menores de 2 (dois) anos. Não
-                                aplicar no glúteo.
-                            </p>
-                        </div>
-                    </conditional-content>
-                    
-                    <conditional-content params="
-                        animal-agressor=morcegos | 
-                        exposicao=leve, animal-agressor=mamiferos-silvestres |
-                        exposicao=grave, animal-agressor=cao-gato-com-sinais |
-                        exposicao=grave, animal-agressor=interesse-economico |
-                        exposicao=grave, animal-agressor=mamiferos-silvestres |
-                    ">
-                        <div class="serum">
-                            <p><b>SORO (SAR ou IGHAR)•</b></p>
-
-                            <p>O SAR, ou a IGHAR, deve ser administrado no dia 0. Caso não esteja disponível, aplicar o mais rápido possível até
-                            o 7° dia após a aplicação da 1° dose de vacina. Após esse prazo é contraindicado. Existindo clara identificação da
-                            localização da(s) lesão(ões), recentes ou cicatrizadas, deve-se infiltrar o volume total indicado, ou o máximo possível,
-                            dentro ou ao redor da(s) lesão(ões). Se não for possível, aplicar o restante por via IM, respeitando o volume máximo
-                            de cada grupo muscular mais próximo da lesão.
-                            Soro antirrábico (SAR): 40 UI/kg de peso.
-                            Imunoglobulina humana antirrábica (IGHAR): IGHAR 20 UI/kg de peso.</p>
-                        </div>
-                    </conditional-content>
-
-                    <conditional-content params="
-                        animal-agressor=morcegos | 
-                        exposicao=leve, animal-agressor=mamiferos-silvestres |
-                        exposicao=grave, animal-agressor=cao-gato-com-sinais |
-                        exposicao=grave, animal-agressor=interesse-economico |
-                        exposicao=grave, animal-agressor=mamiferos-silvestres |
-                    ">
-                        <div class="button-container">
-                            <button is="popup-button" popup-target="modal-soro" class="submit-button">
-                                Clique para calcular o soro
-                            </button>
-                        </div>
-                    </conditional-content>
-                    
-                </fieldset>
-            </section>
-            
-        </conditional-content>
+    <div class="main-container">
+        <main class="page-width center">
         
+            <h1 class="title">PROFILAXIA DA RAIVA HUMANA</h1>
+            <section class="form-container">
+                
+                <form id="caso" method="get">
+                    <fieldset id="animal-agressor">
+                        <legend>ANIMAL AGRESSOR</legend>
+                        <div class="choice">  
+                            <input id="cao-gato-sem-sinais" type="radio" name="animal-agressor" value="cao-gato-sem-sinais" required>
+                            <label for="cao-gato-sem-sinais"><b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA</label>
+                        </div>
+                        
+                        <div class="choice">
+                            <input id="cao-gato-com-sinais" type="radio" name="animal-agressor" value="cao-gato-com-sinais" required>
+                            <label for="cao-gato-com-sinais"><b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA</label>
+                        </div>
 
-        <popup-modal id="modal-soro" max-width="600px">
-            <section class="form-container" id="calculo-soro">
-                <h2>CÁLCULO DO SORO</h2>
-                <div class="tipo-soro-container">
-                    <div class="choice">  
-                        <input id="homologo" type="radio" name="tipo-soro" value="homologo" required>
-                        <label for="homologo"><b>HOMÓLOGO</b> (Humano)</label>
-                    </div>
-                    <div class="choice">  
-                        <input id="heterologo" type="radio" name="tipo-soro" value="heterologo" required>
-                        <label for="heterologo"><b>HETERÓLOGO</b> (Animal)</label>
-                    </div>
-                </div>
-            
-                <div class="peso-container choice"> 
-                    <label for="peso"><b>PESO</b></label>
-                    <input id="peso" type="number" name="peso" required oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="kg">
-                    
-                </div>
-                <div class="button-container">
-                    <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
-                </div>
-                <div class="container-resultado-soro">
-                    <div id="resultado-soro"></div>
-                    <div id="obs-soro" class="hidden obs-soro">
-                        <conditional-content params="
-                            animal-agressor=cao-gato-sem-sinais | 
-                            animal-agressor=cao-gato-com-sinais|
-                            animal-agressor=interesse-economico|
-                        ">
-                            <hr/>
-                            <p>Obs:</p>
-                            <p>
-                                <b>Em períodos de escassez</b>, em casos de agressões por cão, gato e animais de interesse econômico (bovídeos, equídeos, caprinos,
-                                ovinos e suínos) deve-se infiltrar o volume total calculado (de acordo ao peso do paciente) no
-                                local da agressão, sendo que:
+                        <div class="choice">
+                            <input id="interesse-economico" type="radio" name="animal-agressor" value="interesse-economico" required>
+                            <label for="interesse-economico"><b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)</label>
+                        </div>
+
+                        <div class="choice">
+                            <input id="mamiferos-silvestres" type="radio" name="animal-agressor" value="mamiferos-silvestres" required>
+                            <label for="mamiferos-silvestres"><b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)</label>
+                        </div>
+
+                        <div class="choice">
+                            <input id="morcegos" type="radio" name="animal-agressor" value="morcegos" required>
+                            <label for="morcegos"><b>MORCEGOS</b></label>
+                        </div>
+
+                        <div class="link-imagens">
+                            <a href="./animais-transmissores-raiva.html">Animais transmissores da raiva</a>
+                        </div>
+                        
+                        
+                    </fieldset>
+                    <fieldset id="tipo-exposicao">
+                        <legend>TIPO DE EXPOSIÇÃO</legend>
+                        <div class="choice">
+                            <input id="contato-indireto" type="radio" name="exposicao" value="contato-indireto" required>
+                            <label for="contato-indireto"><b>CONTATO INDIRETO</b></label>
+                            <details>
+                                <summary>Clique para ver mais informações</summary>
                                 <ul>
-                                    <li>
-                                        Nos casos em que não for possível infiltrar o volume total, deve-se infiltrar apenas a
-                                        quantidade que o local suporte (intralesional e perilesional), não sendo necessário abrir as
-                                        outras ampolas de SAR ou IGHAR para realizar via intramuscular.
-                                    </li>
-                                    <li>
-                                        Nas agressões envolvendo morcegos e outros animais silvestres, deve-se realizar a infiltração
-                                        intralesional com máximo de volume possível e completar o volume total calculado, pela via
-                                        intramuscular, em local perto da agressão.
-                                    </li>
+                                    <li>Tocar ou dar de comer para animais.</li>
+                                    <li>Lambedura em pele íntegra.</li>
+                                    <li>Contato em pele íntegra com secreções ou excreções de animal, ainda que raivoso ou de caso humano</li>
                                 </ul>
-                            </p>
-                            <div>
-                                <details>
-                                    <summary>Referência:</summary>
-                                    <p>
-                                        BAHIA. Secretaria da Saúde. Diretoria de Vigilância Epidemiológica - DIVEP - SESAB/SUVISA/DIVEP/CIVEDI/RAIVA. 
-                                        Nota Técnica nº 01/2024. Orientações para implementação da técnica de infiltração intralesional na profilaxia 
-                                        da raiva humana pós-exposição, em período de escassez de soro e imunoglobulina antirrábica humana.
-                                    </p>
-                                </details>
+                            </details>
+                        </div>
+                        <div class="choice">
+                            <input id="leve" type="radio" name="exposicao" value="leve" required>
+                            <label for="leve"><b>LEVE</b></label>
+                            <details>
+                                <summary>Clique para ver mais informações</summary>
+                                <ul>
+                                    <li>Mordedura ou arranhadura superficial no tronco ou nos membros, exceto mãos e pés.</li>
+                                    <li>Lambedura de lesões superficiais.</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="choice">
+                            <input id="grave" type="radio" name="exposicao" value="grave" required>
+                            <label for="grave"><b>GRAVE</b></label>
+                            <details>
+                                <summary>Clique para ver mais informações</summary>
+                                <ul>
+                                    <li>Mordedura ou arranhadura nas mucosas, no segmento cefálico, nas mãos ou nos pés.</li>
+                                    <li>Mordedura ou arranhadura múltiplas ou extensas, em qualquer região do corpo.</li>
+                                    <li>Mordedura ou arranhadura profunda, mesmo que puntiforme.</li>
+                                    <li>Lambedura de lesões profundas ou de mucosas, mesmo que intactas</li>
+                                    <li>Mordedura ou arranhadura causado por mamífero silvestre</li>
+                                </ul>
+                            </details>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <conditional-content params="exposicao, animal-agressor">
+                <section class="answer-container">
+                    <fieldset class="answer">
+                        <legend>PROTOCOLO RECOMENDADO</legend>
+                        <div class="case">
+                            <conditional-content params="exposicao=contato-indireto">
+                                Caso: contato <b>INDIRETO</b> com
+                            </conditional-content>
+                            <conditional-content params="exposicao=leve">
+                                Caso: contato <b>LEVE</b> com
+                            </conditional-content>
+                            <conditional-content params="exposicao=grave">
+                                Caso: contato <b>GRAVE</b> com
+                            </conditional-content>
+
+                            <conditional-content params="animal-agressor=cao-gato-sem-sinais">
+                                <b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA
+                            </conditional-content>
+                            <conditional-content params="animal-agressor=cao-gato-com-sinais">
+                                <b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA
+                            </conditional-content>
+                            <conditional-content params="animal-agressor=interesse-economico">
+                                <b>MAMÍFERO DOMÉSTICO DE INTERESSE ECONÔMICO</b> (bovídeos, equídeos, caprinos, suínos e ovinos)
+                            </conditional-content>
+                            <conditional-content params="animal-agressor=mamiferos-silvestres">
+                                <b>MAMÍFEROS SILVESTRES</b> (ex.: raposa, macaco, sagui)
+                            </conditional-content>
+                            <conditional-content params="animal-agressor=morcegos">
+                                <b>MORCEGOS</b>
+                            </conditional-content>
+                            <hr/>
+                        </div>
+                        
+                        <div class="protocol">
+
+                            <conditional-content params="animal-agressor=cao-gato-sem-sinais">
+                                <conditional-content params="exposicao=contato-indireto">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INDICAR PROFILAXIA</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=leve">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INICIAR PROFILAXIA.</li>
+                                        <li>Manter o animal em observação por 10 dias Se permanecer vivo e saudável, suspender a observação no 10° dia e encerrar o caso. Se
+                                        morrer, desaparece ou apresentar sinais de raiva, indicar VACINA (dias 0, 3, 7 e 14)</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=grave">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INICIAR PROFILAXIA.</li>
+                                        <li>Manter o animal em observação por 10 dias Se permanecer vivo e saudável, suspender a observação no 10° dia e encerrar o caso. Se
+                                        morrer, desaparece ou apresentar sinais de raiva, indicar VACINA (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)•</li>
+                                    </ul>
+                                    
+                                </conditional-content>
+
+                            </conditional-content>
+
+                            <conditional-content params="animal-agressor=cao-gato-com-sinais">
+
+                                <conditional-content params="exposicao=contato-indireto">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INDICAR PROFILAXIA</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=leve">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14)</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=grave">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
+                                    </ul>
+                                    
+                                </conditional-content>
+
+                            </conditional-content>
+
+                            <conditional-content params="animal-agressor=interesse-economico">
+                                
+                                <conditional-content params="exposicao=contato-indireto">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INDICAR PROFILAXIA</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=leve">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14)</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=grave">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
+                                    </ul>
+                                </conditional-content>
+
+                            </conditional-content>
+
+                            <conditional-content params="animal-agressor=mamiferos-silvestres">
+                                
+                                <conditional-content params="exposicao=contato-indireto">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>NÃO INDICAR PROFILAXIA</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=leve">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
+                                    </ul>
+                                </conditional-content>
+
+                                <conditional-content params="exposicao=grave">
+                                    <ul>
+                                        <li>Lavar com água e sabão.</li>
+                                        <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
+                                    </ul>
+                                </conditional-content>
+
+                            </conditional-content>
+
+                            <conditional-content params="animal-agressor=morcegos">
+                                <ul>
+                                    <li>Lavar com água e sabão.</li>
+                                    <li>INICIAR PROFILAXIA: VACINA* (dias 0, 3, 7 e 14) e SORO (SAR ou IGHAR)</li>
+                                </ul>
+
+                            </conditional-content>
+
+                        </div>
+                        <conditional-content params="
+                        animal-agressor=morcegos | 
+                        exposicao=leve, animal-agressor=cao-gato-com-sinais |
+                        exposicao=leve, animal-agressor=interesse-economico |
+                        exposicao=leve, animal-agressor=mamiferos-silvestres |
+                        exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                        exposicao=grave, animal-agressor=interesse-economico |
+                        exposicao=grave, animal-agressor=mamiferos-silvestres |
+                        ">
+                            <div class="vaccine">
+                                <p><b>*VACINA</b> Quatro doses, nos dias 0, 3, 7 e 14</p>
+                                <p>
+                                    A vacina deverá ser administrada por via intradérmica ou via intramuscular.
+                                    Via intradérmica: volume da dose 0,2 ml. O volume da dose deve ser dividido em duas aplicações de 0,1 ml cada e
+                                    administradas em dois sítios distintos, independente da apresentação da vacina, seja 0,5 ml ou 1,0 ml (dependendo do
+                                    laboratório produtor). Local de aplicação: inserção do músculo deltoide ou no antebraço.
+                                    Via intramuscular: dose total 0,5 ml ou 1,0 ml (dependendo do laboratório produtor). Administrar todo o volume do
+                                    frasco. Local de aplicação: no músculo deltoide ou vasto lateral da coxa em crianças menores de 2 (dois) anos. Não
+                                    aplicar no glúteo.
+                                </p>
                             </div>
                         </conditional-content>
                         
+                        <conditional-content params="
+                            animal-agressor=morcegos | 
+                            exposicao=leve, animal-agressor=mamiferos-silvestres |
+                            exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                            exposicao=grave, animal-agressor=interesse-economico |
+                            exposicao=grave, animal-agressor=mamiferos-silvestres |
+                        ">
+                            <div class="serum">
+                                <p><b>SORO (SAR ou IGHAR)•</b></p>
+
+                                <p>O SAR, ou a IGHAR, deve ser administrado no dia 0. Caso não esteja disponível, aplicar o mais rápido possível até
+                                o 7° dia após a aplicação da 1° dose de vacina. Após esse prazo é contraindicado. Existindo clara identificação da
+                                localização da(s) lesão(ões), recentes ou cicatrizadas, deve-se infiltrar o volume total indicado, ou o máximo possível,
+                                dentro ou ao redor da(s) lesão(ões). Se não for possível, aplicar o restante por via IM, respeitando o volume máximo
+                                de cada grupo muscular mais próximo da lesão.
+                                Soro antirrábico (SAR): 40 UI/kg de peso.
+                                Imunoglobulina humana antirrábica (IGHAR): IGHAR 20 UI/kg de peso.</p>
+                            </div>
+                        </conditional-content>
+
+                        <conditional-content params="
+                            animal-agressor=morcegos | 
+                            exposicao=leve, animal-agressor=mamiferos-silvestres |
+                            exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                            exposicao=grave, animal-agressor=interesse-economico |
+                            exposicao=grave, animal-agressor=mamiferos-silvestres |
+                        ">
+                            <div class="button-container">
+                                <button is="popup-button" popup-target="modal-soro" class="submit-button">
+                                    Clique para calcular o soro
+                                </button>
+                            </div>
+                        </conditional-content>
+                        
+                    </fieldset>
+                </section>
+                
+            </conditional-content>
+            
+
+            <popup-modal id="modal-soro" max-width="600px">
+                <section class="form-container" id="calculo-soro">
+                    <h2>CÁLCULO DO SORO</h2>
+                    <div class="tipo-soro-container">
+                        <div class="choice">  
+                            <input id="homologo" type="radio" name="tipo-soro" value="homologo" required>
+                            <label for="homologo"><b>HOMÓLOGO</b> (Humano)</label>
+                        </div>
+                        <div class="choice">  
+                            <input id="heterologo" type="radio" name="tipo-soro" value="heterologo" required>
+                            <label for="heterologo"><b>HETERÓLOGO</b> (Animal)</label>
+                        </div>
                     </div>
-                </div>
                 
-                
-
-            </section>
-        </popup-modal>
-
-
-        
-    </main>
+                    <div class="peso-container choice"> 
+                        <label for="peso"><b>PESO</b></label>
+                        <input id="peso" type="number" name="peso" required oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="kg">
+                        
+                    </div>
+                    <div class="button-container">
+                        <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
+                    </div>
+                    <div class="container-resultado-soro">
+                        <div id="resultado-soro"></div>
+                        <div id="obs-soro" class="hidden obs-soro">
+                            <conditional-content params="
+                                animal-agressor=cao-gato-sem-sinais | 
+                                animal-agressor=cao-gato-com-sinais|
+                                animal-agressor=interesse-economico|
+                            ">
+                                <hr/>
+                                <p>Obs:</p>
+                                <p>
+                                    <b>Em períodos de escassez</b>, em casos de agressões por cão, gato e animais de interesse econômico (bovídeos, equídeos, caprinos,
+                                    ovinos e suínos) deve-se infiltrar o volume total calculado (de acordo ao peso do paciente) no
+                                    local da agressão, sendo que:
+                                    <ul>
+                                        <li>
+                                            Nos casos em que não for possível infiltrar o volume total, deve-se infiltrar apenas a
+                                            quantidade que o local suporte (intralesional e perilesional), não sendo necessário abrir as
+                                            outras ampolas de SAR ou IGHAR para realizar via intramuscular.
+                                        </li>
+                                        <li>
+                                            Nas agressões envolvendo morcegos e outros animais silvestres, deve-se realizar a infiltração
+                                            intralesional com máximo de volume possível e completar o volume total calculado, pela via
+                                            intramuscular, em local perto da agressão.
+                                        </li>
+                                    </ul>
+                                </p>
+                                <div>
+                                    <details>
+                                        <summary>Referência:</summary>
+                                        <p>
+                                            BAHIA. Secretaria da Saúde. Diretoria de Vigilância Epidemiológica - DIVEP - SESAB/SUVISA/DIVEP/CIVEDI/RAIVA. 
+                                            Nota Técnica nº 01/2024. Orientações para implementação da técnica de infiltração intralesional na profilaxia 
+                                            da raiva humana pós-exposição, em período de escassez de soro e imunoglobulina antirrábica humana.
+                                        </p>
+                                    </details>
+                                </div>
+                            </conditional-content>
+                            
+                        </div>
+                    </div>
+                </section>
+            </popup-modal>
+        </main>
+    </div>
     <random-mov-image src="assets/img/morcego.png" width="90" height="90" move-interval="3000"></random-mov-image>
     <random-mov-image src="assets/img/morcego.png" width="80" height="80" move-interval="3500"></random-mov-image>
     <random-mov-image src="assets/img/morcego.png" width="100" height="100" move-interval="4000"></random-mov-image>
