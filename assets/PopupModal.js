@@ -111,13 +111,13 @@ class PopupModal extends HTMLElement {
     }
 
     setupEventListeners() {
-        // Fechar ao clicar no overlay
-        this.overlay.addEventListener('click', () => this.close());
-        
-        // Fechar ao clicar no botão X
-        this.closeButton.addEventListener('click', () => this.close());
-        
-        // Fechar com ESC
+        const closeHandler = () => this.close();
+
+        this.overlay.addEventListener('click', closeHandler);
+        this.overlay.addEventListener('pointerdown', closeHandler);
+
+        this.closeButton.addEventListener('click', closeHandler);
+
         this.escListener = (event) => {
             if (event.key === 'Escape' && this.isOpen) {
                 this.close();
@@ -125,8 +125,10 @@ class PopupModal extends HTMLElement {
         };
         document.addEventListener('keydown', this.escListener);
 
-        // Prevenir fechamento ao clicar no modal
         this.modal.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+        this.modal.addEventListener('pointerdown', (event) => {
             event.stopPropagation();
         });
     }
