@@ -1,10 +1,11 @@
 
-const params = new URLSearchParams(window.location.search);
+const selectedPparams = new URLSearchParams(window.location.search);
+const formCaso = document.getElementById('caso');
 
-params.forEach((value, name) => {
-  const elements = document.querySelectorAll(`[name="${name}"]`);
+selectedPparams.forEach((value, name) => {
+  const element = formCaso.querySelectorAll(`[name="${name}"]`);
   
-  elements.forEach(element => {
+  element.forEach(element => {
     if ((element.type === 'checkbox' || element.type === 'radio') && value === '') {
       element.checked = true;
     }
@@ -18,7 +19,18 @@ params.forEach((value, name) => {
       element.value = value;
     }
   });
+
 });
+
+
+formCaso.addEventListener('input', ()=>{
+  if(!formCaso.checkValidity()){
+    return;
+  }
+
+  formCaso.submit()
+})
+
 
 function calcularSoro() {
   const pesoElement = document.querySelector('#peso');
