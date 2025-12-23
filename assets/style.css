@@ -57,7 +57,7 @@ h1,
 }
 
 .form-container fieldset,
-.answer-container{
+.answer-container .answer{
     margin-left: var(--space-sm);
     margin-right: var(--space-sm);
     margin-top: var(--space-lg);
@@ -67,7 +67,7 @@ h1,
     border: var(--border-default);
 }
 
-.form-container legend{
+.form-container legend, .answer-container legend{
     background-color: var(--fieldset-color);
     border: var(--border-default);
     font-weight: 800;
@@ -75,7 +75,7 @@ h1,
     border-radius: var(--radius-lg);
 }
 
-.answer-container{
+.answer{
     padding-top: var(--space-md);
     margin-bottom: var(--space-md);
 }
@@ -112,4 +112,7 @@ details summary{
 
 .hidden{
     display: none !important;
+}
+.obs-soro{
+    font-size: 0.8rem;
 }

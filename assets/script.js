@@ -30,7 +30,7 @@ function calcularSoro() {
   const pesoElement = document.querySelector('#peso');
   const tipoSoroElement = document.querySelector('#calculo-soro input[name="tipo-soro"]:checked');
   const resultadoSoro = document.querySelector('#resultado-soro');
-  const observacaoSoro = document.querySelector('#observacao-soro')
+  const observacaoSoro = document.querySelector('#obs-soro')
 
   if(!pesoElement || !tipoSoroElement){
     resultadoSoro.textContent = "Por favor, preencha os campos.";
