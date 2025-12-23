@@ -24,6 +24,7 @@ function calcularSoro() {
   const pesoElement = document.querySelector('#peso');
   const tipoSoroElement = document.querySelector('#calculo-soro input[name="tipo-soro"]:checked');
   const resultadoSoro = document.querySelector('#resultado-soro');
+  const observacaoSoro = document.querySelector('#observacao-soro')
 
   if(!pesoElement || !tipoSoroElement){
     resultadoSoro.textContent = "Por favor, preencha os campos.";
@@ -51,8 +52,10 @@ function calcularSoro() {
   const tipoTexto = tipoSoro === "heterologo" ? "Heterólogo" : "Homólogo";
   
   resultadoSoro.innerHTML = 
-      `<p><small>Tipo de Soro: <b>${tipoTexto}</b></small></p>` +
-      `<p><small>Peso do Paciente: <b>${peso} kg</b></small></p>` +
-      `<p>Dose necessária: <b>${doseUI.toFixed(0)} UI</b></p>` +
-      `<p>Volume a ser administrado: <b>${volumeML.toFixed(1)} mL</b></p>`;
+    `<div><small>Tipo de Soro: <b>${tipoTexto}</b></small></div>` +
+    `<div><small>Peso do Paciente: <b>${peso} kg</b></small></div>` +
+    `<p>Dose necessária: <b>${doseUI.toFixed(0)} UI</b></p>` +
+    `<p>Volume a ser administrado: <b>${volumeML.toFixed(1)} mL</b></p>`;
+
+  observacaoSoro.classList.remove('hidden');  
 }

@@ -82,13 +82,6 @@
                 </fieldset>
                 <div class="button-container">
                     <button type="submit" class="submit-button">Enviar</button>
-                    <conditional-content params="
-                        animal-agressor=morcegos | 
-                        animal-agressor=mamiferos-silvestres, exposicao=leve|
-                        exposicao=grave|
-                    ">
-                        
-                    </conditional-content>
                 </div>
                 
             </form>
@@ -243,8 +236,12 @@
                 </div>
                 <conditional-content params="
                 animal-agressor=morcegos | 
-                exposicao=leve|
-                exposicao=grave|
+                exposicao=leve, animal-agressor=cao-gato-com-sinais |
+                exposicao=leve, animal-agressor=interesse-economico |
+                exposicao=leve, animal-agressor=mamiferos-silvestres |
+                exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                exposicao=grave, animal-agressor=interesse-economico |
+                exposicao=grave, animal-agressor=mamiferos-silvestres |
                 ">
                     <div class="vaccine">
                         <p><b>*VACINA</b> Quatro doses, nos dias 0, 3, 7 e 14</p>
@@ -261,9 +258,11 @@
                 </conditional-content>
                 
                 <conditional-content params="
-                animal-agressor=morcegos | 
-                animal-agressor=mamiferos-silvestres, exposicao=leve|
-                exposicao=grave|
+                    animal-agressor=morcegos | 
+                    exposicao=leve, animal-agressor=mamiferos-silvestres |
+                    exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                    exposicao=grave, animal-agressor=interesse-economico |
+                    exposicao=grave, animal-agressor=mamiferos-silvestres |
                 ">
                     <div class="serum">
                         <p><b>SORO (SAR ou IGHAR)•</b></p>
@@ -280,14 +279,16 @@
 
                 <conditional-content params="
                     animal-agressor=morcegos | 
-                    animal-agressor=mamiferos-silvestres, exposicao=leve|
-                    exposicao=grave|
+                    exposicao=leve, animal-agressor=mamiferos-silvestres |
+                    exposicao=grave, animal-agressor=cao-gato-com-sinais |
+                    exposicao=grave, animal-agressor=interesse-economico |
+                    exposicao=grave, animal-agressor=mamiferos-silvestres |
                 ">
                     <div class="button-container">
                         <button is="popup-button" popup-target="modal-soro" class="submit-button">
                             Clique para calcular o soro
                         </button>
-                    </div>  
+                    </div>
                 </conditional-content>
                 
             </section>
@@ -316,8 +317,49 @@
                 <div class="button-container">
                     <button type="button" class="submit-button" onclick="calcularSoro()">Calcular</button>
                 </div>
-               
-                <div id="resultado-soro"></div>
+                <div class="container-resultado-soro">
+                    <div id="resultado-soro"></div>
+                    <div id="observacao-soro" class="hidden">
+                        <conditional-content params="
+                            animal-agressor=cao-gato-sem-sinais | 
+                            animal-agressor=cao-gato-com-sinais|
+                            animal-agressor=interesse-economico|
+                        ">
+                            <hr/>
+                            <p>
+                                Nas agressões por cão, gato e animais de interesse econômico (bovídeos, equídeos, caprinos,
+                                ovinos e suínos) deve-se infiltrar o volume total calculado (de acordo ao peso do paciente) no
+                                local da agressão, sendo que:
+                                <ul>
+                                    <li>
+                                        Nos casos em que não for possível infiltrar o volume total, deve-se infiltrar apenas a
+                                        quantidade que o local suporte (intralesional e perilesional), não sendo necessário abrir as
+                                        outras ampolas de SAR ou IGHAR para realizar via intramuscular.
+                                    </li>
+                                    <li>
+                                        Nas agressões envolvendo morcegos e outros animais silvestres, deve-se realizar a infiltração
+                                        intralesional com máximo de volume possível e completar o volume total calculado, pela via
+                                        intramuscular, em local perto da agressão.
+                                    </li>
+                                </ul>
+                            </p>
+                            <div>
+                                <details>
+                                    <summary>Referência:</summary>
+                                    <p>
+                                        BAHIA. Secretaria da Saúde. Diretoria de Vigilância Epidemiológica - DIVEP - SESAB/SUVISA/DIVEP/CIVEDI/RAIVA. 
+                                        Nota Técnica nº 01/2024. Orientações para implementação da técnica de infiltração intralesional na profilaxia 
+                                        da raiva humana pós-exposição, em período de escassez de soro e imunoglobulina antirrábica humana.
+                                    </p>
+                                </details>
+                            </div>
+                        </conditional-content>
+                        
+                    </div>
+                </div>
+                
+                
+
             </section>
         </popup-modal>
 

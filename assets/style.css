@@ -1,80 +1,112 @@
 :root{
-    --background-color: #BBBBBB;
+
+    --background-color: #BBDDFF;
     --submit-button-color: #45a049;
-    --fieldset-color:#FFFFFF;
+    --fieldset-color: #FFFFFF;
     --border-color: #000;
+
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 30px;
+
+    --radius-sm: 6px;
+    --radius-lg: 30px;
+    --border-default: 1px solid var(--border-color);
 }
 
 body{
     background-color: var(--background-color);
     margin: 0;
 }
+
 main{
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
-h1, .popup-modal h2{
-    margin-top: 30px;
+
+h1,
+.popup-modal h2{
+    margin-top: var(--space-lg);
     text-align: center;
 }
+
 .submit-button{
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: var(--space-sm) var(--space-md);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     min-width: 200px;
 }
+
 .submit-button:hover{
     background-color: var(--submit-button-color);
 }
+
 .button-container{
-    margin-top: 20px;
+    margin-top: var(--space-md);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--space-md);
 }
 
-.form-container fieldset, .answer-container{
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 30px;
-    margin-top: 30px;
+.form-container fieldset,
+.answer-container{
+    margin-left: var(--space-sm);
+    margin-right: var(--space-sm);
+    margin-top: var(--space-lg);
     background-color: var(--fieldset-color);
-    padding: 6px 12px;
-    border: 1px solid var(--border-color);
-
+    padding: 2rem 1rem;
+    border-radius: var(--radius-lg);
+    border: var(--border-default);
 }
+
 .form-container legend{
     background-color: var(--fieldset-color);
-    border: 1px solid var(--border-color);
+    border: var(--border-default);
     font-weight: 800;
-    padding: 5px 10px;
-    border-radius: 30px
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-lg);
 }
-.form-container fieldset{
-    padding-bottom: 20px;
-}
+
 .answer-container{
-    padding-top: 20px;
-    margin-bottom: 20px;
+    padding-top: var(--space-md);
+    margin-bottom: var(--space-md);
 }
+
 .choice{
-    margin-top: 20px;
+    margin-top: var(--space-md);
+}
+
+fieldset .choice:first-of-type{
+    margin-top: 0;
 }
 
 .tipo-soro-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
-#calculo-soro .choice{
+.container-resultado-soro{
+    margin-top: var(--space-md);
+}
+
+.popup-content .choice{
     flex-grow: 1;
     text-align: center;
-    margin-right: 20px;
+    margin-right: var(--space-md);
+}
+
+ul{
+    padding-left: var(--space-md);
+}
+
+.hidden{
+    display: none !important;
 }
