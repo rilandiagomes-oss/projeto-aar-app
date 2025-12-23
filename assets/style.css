@@ -309,7 +309,6 @@ fieldset .choice:first-of-type {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: var(--space-md);
 }
 
 .container-resultado-soro {
