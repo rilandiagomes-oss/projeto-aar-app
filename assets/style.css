@@ -373,7 +373,8 @@ a:hover {
 }
 
 .img-gallery .image {
-    width: min(768px, 100%);
+    width: 100%;
+    max-width: 640px;
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: var(--radius-md);
