@@ -25,9 +25,8 @@
 <body>
     <div class="main-container">
         <main class="page-width center">
-
+        
             <h1 class="title">PROFILAXIA DA RAIVA HUMANA</h1>
-
             <aside class="navbar pb-sm mb-sm">
                 <div class="open-tutorial">
                     <popup-trigger popup-target="tutorial-modal">
@@ -38,22 +37,20 @@
 
             <section class="form-container">
                 <form id="caso" method="get">
-
-                    <!-- ANIMAL AGRESSOR -->
                     <fieldset id="animal-agressor">
                         <legend>ANIMAL AGRESSOR</legend>
 
-                        <div class="choice">
+                        <div class="choice">  
                             <input id="cao-gato-sem-sinais" type="radio" name="animal-agressor" value="cao-gato-sem-sinais" required>
                             <label for="cao-gato-sem-sinais">
-                                <b>CÃO OU GATO</b> – PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA
+                                <b>CÃO OU GATO</b> - ANIMAL PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS E SEM SINAIS SUGESTIVOS DE RAIVA
                             </label>
                         </div>
 
                         <div class="choice">
                             <input id="cao-gato-com-sinais" type="radio" name="animal-agressor" value="cao-gato-com-sinais" required>
                             <label for="cao-gato-com-sinais">
-                                <b>CÃO OU GATO</b> – NÃO PASSÍVEL DE OBSERVAÇÃO OU COM SINAIS SUGESTIVOS DE RAIVA
+                                <b>CÃO OU GATO</b> - ANIMAL NÃO PASSÍVEL DE OBSERVAÇÃO POR 10 DIAS OU COM SINAIS SUGESTIVOS DE RAIVA
                             </label>
                         </div>
 
@@ -83,7 +80,6 @@
                         </div>
                     </fieldset>
 
-                    <!-- TIPO DE EXPOSIÇÃO -->
                     <fieldset id="tipo-exposicao">
                         <legend>TIPO DE EXPOSIÇÃO</legend>
 
@@ -105,18 +101,28 @@
                 </form>
             </section>
 
-            <!-- RESULTADO -->
-            <section class="answer-container">
-                <fieldset class="answer">
-                    <legend>PROTOCOLO RECOMENDADO</legend>
-                    <p>Selecione as opções para visualizar a conduta profilática.</p>
-                </fieldset>
-            </section>
+            <!-- Resultado -->
+            <conditional-content params="exposicao, animal-agressor">
+                <section class="answer-container">
+                    <fieldset class="answer">
+                        <legend>PROTOCOLO RECOMENDADO</legend>
+                        <p>Selecione as opções para visualizar a conduta profilática.</p>
+                    </fieldset>
+                </section>
+            </conditional-content>
+
+            <!-- Modal Tutorial -->
+            <auto-open-popup-modal section-key="tutorial" section-key-life="86400" id="tutorial-modal">
+                <article>
+                    <h2>Usando o Software</h2>
+                    <p>Este guia orienta como utilizar a ferramenta digital para determinar a conduta profilática após exposição a animais transmissores da raiva.</p>
+                </article>
+            </auto-open-popup-modal>
 
         </main>
     </div>
 
-    <!-- Imagens Animadas -->
+    <!-- Imagens animadas -->
     <random-mov-image src="assets/img/morcego.png" width="90" height="90" move-interval="3000"></random-mov-image>
     <random-mov-image src="assets/img/morcego.png" width="80" height="80" move-interval="3500"></random-mov-image>
     <random-mov-image src="assets/img/morcego.png" width="100" height="100" move-interval="4000"></random-mov-image>
@@ -136,10 +142,10 @@
             window.addEventListener("load", function () {
                 navigator.serviceWorker.register("service-worker.js")
                     .then(function (registration) {
-                        console.log("Service Worker registrado com sucesso:", registration.scope);
+                        console.log("Service Worker registrado:", registration.scope);
                     })
                     .catch(function (error) {
-                        console.error("Erro ao registrar o Service Worker:", error);
+                        console.log("Erro ao registrar o Service Worker:", error);
                     });
             });
         }
